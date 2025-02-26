@@ -1,0 +1,23 @@
+name: Daily Checkin with Python
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # UTC时间0点（北京时间8点）
+  workflow_dispatch:      # 允许手动触发
+
+jobs:
+  checkin:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 拉取完整提交历史
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Run Python Script
+        run: python checkin.py
