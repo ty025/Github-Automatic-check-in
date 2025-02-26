@@ -8,6 +8,8 @@ on:
 jobs:
   checkin:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write    # 允许写入仓库
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
