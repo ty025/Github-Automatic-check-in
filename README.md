@@ -1,3 +1,30 @@
 # Github-Automatic-check-in
-- GIthub自动打卡，签到
-- 无需配置，开箱即用
+- Github自动打卡，签到
+
+> [!NOTE]
+> 
+> 这里的自动签到是每天都有自动提交的记录，被记录到Github的贡献记录（Contribution Graph)
+> 
+> 然后在**GitHub Streak**就能显示连续提交的代码记录不间断
+
+
+## 配置过程
+
+### 生成个人访问token（PAT）
+
+1. 登录 GitHub，进入 Settings > Developer settings > Personal access tokens。
+2. Note填写 **daily-checkin**，Expiration选择**No expiration**（永不过期）
+![img.png](pic/token名称.png)
+3. 点击 Generate new token，选择以下权限：
+   - repo（完全控制仓库）
+   - workflow（允许操作 Actions）
+![img.png](pic/生成token.png)
+4. 生成后，复制 Token 值 **（注意：Token 只会显示一次，务必及时保存）**。
+
+### 将 PAT 添加到 Secrets
+1. 进入你的仓库（Github-Automatic-check-in），点击 Settings > Secrets and variables > Actions。
+![img.png](pic/仓库设置Action.png)
+2. 点击 New repository secret，输入：
+   - Name: **DAILY_CHECKIN**
+   - Value: 粘贴刚才生成的 PAT。
+3. 点击 Add secret
