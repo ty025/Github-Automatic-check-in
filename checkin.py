@@ -14,6 +14,8 @@ def generate_checkin_file():
     # print("✅ 签到文件已生成")
 
 def git_commit_and_push():
+
+    os.system('git branch -M main')
     # 配置Git用户信息
     os.system('git config --global user.name "xiname"')
     os.system('git config --global user.email "xinametravel@qq.com"')
