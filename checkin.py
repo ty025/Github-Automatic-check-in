@@ -15,10 +15,10 @@ def generate_checkin_file():
 
 def git_commit_and_push():
     # 配置Git用户信息（必须设置，否则提交失败）
-    os.system('git config --global user.name "GitHub Actions"')
-    os.system('git config --global user.email "actions@github.com"')
+    os.system('git config --global user.name "xiname"')
+    os.system('git config --global user.email "xinametravel@qq.com"')
 
-    # 添加、提交、推送
+    # 添加、提交
     os.system("git add daily-log.txt")
     os.system(f'git commit -m "Daily checkin: {datetime.utcnow().strftime("%Y-%m-%d")}"')
     os.system("git push origin main")
