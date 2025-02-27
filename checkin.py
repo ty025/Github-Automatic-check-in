@@ -14,15 +14,18 @@ def generate_checkin_file():
     # print("✅ 签到文件已生成")
 
 def git_commit_and_push():
-    # 配置Git用户信息（必须设置，否则提交失败）
+    # 配置Git用户信息
     os.system('git config --global user.name "xiname"')
     os.system('git config --global user.email "xinametravel@qq.com"')
+
+    # 设置 GitHub Token（从 secrets 获取）
+    os.system(f'git remote set-url origin https://{os.getenv("GITHUB_TOKEN")}@github.com/TravelTibet/Github-Automatic-check-in.git')
 
     # 添加、提交
     os.system("git add daily-log.txt")
     os.system(f'git commit -m "Daily checkin: {datetime.utcnow().strftime("%Y-%m-%d")}"')
     os.system("git push origin main")
-    # print("🚀 代码已提交到仓库")
+
 
 if __name__ == "__main__":
     generate_checkin_file()
