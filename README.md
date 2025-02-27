@@ -28,3 +28,11 @@
    - Name: **DAILY_CHECKIN**
    - Value: 粘贴刚才生成的 PAT。
 3. 点击 Add secret
+
+### 更改自己的账号以及名称
+在[代码中](checkin.py)的这两行
+```python 
+    os.system('git config --global user.name "xiname"')
+    os.system('git config --global user.email "xinametravel@qq.com"')
+```
+user.name 以及 user.email更改成自己的**Github**的账户名以及提交的电子邮件
