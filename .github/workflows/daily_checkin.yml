@@ -2,7 +2,7 @@ name: Daily Checkin with Python
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # UTC时间0点（北京时间8点）
+    - cron: '0 1 * * *'  # UTC时间1点（北京时间9点）
   workflow_dispatch:      # 允许手动触发
 
 jobs:
