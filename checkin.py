@@ -17,8 +17,8 @@ def git_commit_and_push():
 
     os.system('git branch -M main')
     # 配置Git用户信息
-    os.system('git config --global user.name "xiname"')
-    os.system('git config --global user.email "xinametravel@qq.com"')
+    os.system('git config --global user.name "ty025"')
+    os.system('git config --global user.email "emu566bw@outlook.com"')
 
     # 设置 GitHub Token（从 secrets 获取）
     os.system(f'git remote set-url origin https://{os.getenv("GITHUB_TOKEN")}@github.com/TravelTibet/Github-Automatic-check-in.git')
